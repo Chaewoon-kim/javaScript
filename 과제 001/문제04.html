@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>원의 넓이 구해보기</title>
+  </head>
+  <body>
+    <script>
+      /*
+       
+        원의 넓이 구하기 )   지름을 입력받아 원의 넓이를  구하기 
+         원주율:3.14   
+
+        입력 : 지름
+        출력 : 원의 넓이
+
+        처리과정: 지름을 입력 받아 반지름을 구해 변수에 대입
+                원의 넓이를 구하기 위해 새로운 변수 선언 후 대입
+
+ 
+*/
+
+      let diameter = prompt("지름을 입력하세요: ");
+      let radius = parseFloat(diameter / 2); //반지름
+      let pi = 3.14; //원주율
+      let area = radius ** 2 * pi; //원의 넓이
+      document.write("해당 원의 넓이: " + area);
+    </script>
+  </body>
+</html>

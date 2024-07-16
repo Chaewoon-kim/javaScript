@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 화면 만들기</title>
+    <style>
+        .wrap{
+            width: 400px;
+            border: 1px solid black;
+            padding: 10px; /*안 쪽 내용의 여백*/
+            margin: 0 auto; /*좌우 여백을 같게하여 화면 가운데에 배치.*/
+        }
+        /*.img 와 .info의 부모는 .wrap */
+        .img_wrap{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 0 auto;
+
+        
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Hd3uNFheG6_e1OOqBax3A_iWpNCR0tOf2A&s");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .info_wrap{
+            width: 300px;
+            border: 1px solid black;
+            margin: 0 auto; 
+            padding: 10px;
+            
+        }
+
+        .info_wrap input{
+            width: 98%;
+            height: 30px;
+            margin-top: 5px;
+        }
+
+        .info_wrap button{
+            width: 100%;
+            height: 40px;
+            border: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="img_wrap"></div>
+        <div class="info_wrap">
+            <input type="text" placeholder="ID">
+            <input type="password" placeholder="PW">
+            <button>로그인</button>
+        </div>
+    </div>
+</body>
+</html>

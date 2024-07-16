@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홀수 짝수 구분하기</title>
+    <script>
+        // Q. 숫자를 입력 받고 홀수 짝수 판별하기
+
+        //처리 과정 
+        // 1) 수를 입력
+        // 2) 나머지를 구함
+        // 3) 나머지 0 -> 짝수 , 1 -> 홀수
+        // 4) result 출력
+        // 5) 프로그램 종료
+
+        let number = prompt("수를 입력하세요."); // 1
+        let remain = number % 2; // 2. 나머지를 구해 remain 변수에 대입
+        let result; // 3) 결과 변수 선언
+        if(remain == 0 ? result = "짝수" : result = "홀수"); //나머지 0 -> 짝수 , 1 -> 홀수
+
+        alert(result); // result 출력
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

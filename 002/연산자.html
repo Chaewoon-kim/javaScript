@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 개념 + 예제</title>
+</head>
+<body>
+<!--* 연산자는 연산의 결과가 발생한다. 
+
+* 산술 연산자, 비교 연산자, 증감 연산자, 대입 연산자    
+
+* 증감연산자 -> 전위증감, 후위증감 -->
+
+</body>
+<script>
+    let a = 10;
+    let b = 10;
+
+    let result = 3 + 5; //8
+
+    //++: 공통 변수 값은 1증가  , 다른점 : 연산의 결과가 다르다.
+    //전위 : 값은 먼저 변경하고 대입 , 후위: 사용을 한 후에 값을 변경
+
+    let rtn1 = ++a; // 11
+    let rtn2 = b++; // 10  
+    console.log(rtn1);
+    console.log(rtn2);
+
+    a++;  // a = 11
+    result1 = a++ + ++b; //11 + 11 = 22
+    b++ // a = 12 , b = 12
+    result2 = b++ + ++a; // 12 + 13 = 25
+
+    console.log(result1);
+    console.log(result2);
+
+</script>
+</html>

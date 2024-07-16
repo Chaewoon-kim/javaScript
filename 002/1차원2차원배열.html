@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+ 단어 56개 저장하기
+"apple"
+"banana"
+"cat"
+"dog"
+"elephant"
+"flower"
+"guitar"
+"house"
+"internet"
+"jungle"
+"kangaroo"
+"lion"
+"moon"
+"nest"
+"orange"
+"piano"
+"queen"
+"rabbit"
+"sun"
+"tree"
+"umbrella"
+"vase"
+"water"
+"xylophone"
+"yacht"
+"zebra"
+"ant"
+"ball"
+"car"
+"door"
+"egg"
+"fire"
+"garden"
+"hat"
+"ice"
+"jacket"
+"key"
+"lamp"
+"mouse"
+"note"
+"orange"
+"pencil"
+"queen"
+"rain"
+"sun"
+"table"
+"umbrella"
+"vase"
+"water"
+"xylophone"
+"yacht"
+"zebra"
+"apple"
+"banana"
+"cat"
+"dog"
+*/
+
+      let word1 = "apple";
+      let word2 = "banana";
+      let word3 = "grape";
+      let word4 = "kiwi";
+      let word5 = "orange";
+      let word6 = "mango";
+      let word7 = "pineapple";
+      let word8 = "guitar";
+      let word9 = "drum";
+      let word10 = "base";
+      let word11 = "elec";
+      let word12 = "violin";
+      let word13 = "chello";
+      let word14 = "piano";
+      let word15 = "football";
+      let word16 = "baseball";
+      let word17 = "basketball";
+      let word18 = "pingpong";
+      let word19 = "archery";
+      let word20 = "golf";
+      let word21 = "curling";
+      let word22 = "taxi";
+      let word23 = "bus";
+      let word24 = "bicycle";
+      let word25 = "car";
+      let word26 = "airplane";
+      let word27 = "subway";
+      let word28 = "board";
+      let word29 = "math";
+      let word30 = "science";
+      let word31 = "society";
+      let word32 = "ethics";
+      let word33 = "mechanics";
+      let word34 = "physical";
+      let word35 = "korean";
+      let word36 = "turkey";
+      let word37 = "brazil";
+      let word38 = "France";
+      let word39 = "Argentina";
+      let word40 = "Japan";
+      let word41 = "Korea";
+      let word42 = "Spain";
+      let word43 = "pencil";
+      let word44 = "eraser";
+      let word45 = "mouse";
+      let word46 = "driver";
+      let word47 = "keyboard";
+      let word48 = "laptop";
+      let word49 = "dsektop";
+      let word50 = "SF";
+      let word51 = "Romance";
+      let word52 = "action";
+      let word53 = "horror";
+      let word54 = "comedy";
+      let word55 = "animation";
+      let word56 = "sports";
+
+      //1차원배열 8개   : 변수의 집합 , 배열의 요소가 변수 한 개 의미
+      let fruits = [
+        "apple",
+        "banana",
+        "grape",
+        "kiwi",
+        "orange",
+        "mango",
+        "pineapple",
+      ];
+      let instruments = [
+        "guitar",
+        "drum",
+        "base",
+        "elec",
+        "violin",
+        "chello",
+        "piano",
+      ];
+      let sports = [
+        "football",
+        "baseball",
+        "basketball",
+        "pingpong",
+        "archery",
+        "golf",
+        "curling",
+      ];
+      let transports = [
+        "taxi",
+        "bus",
+        "bicycle",
+        "car",
+        "airplane",
+        "subway",
+        "board",
+      ];
+      let subjects = [
+        "math",
+        "science",
+        "society",
+        "ethics",
+        "mechanics",
+        "physical",
+        "korean",
+      ];
+      let countries = ["turkey","brazil","France","Argentina","Japan","Korea","Spain"];
+      let tools = ["pencil","eraser","mouse","driver","keyboard", "laptop","dsektop"];
+      let genres = ["SF","Romance","action","horror","comedy","animation","sports"
+      ];
+
+      
+
+      // 2차원배열  : 1차원배열의 집합 : 배열의 요소 가 1차원 배열 한 개 의미
+
+      let dimArr1 = [
+        ["apple", "banana", "grape", "kiwi", "orange", "mango", "pineapple"],
+        ["guitar", "drum", "base", "elec", "violin", "chello", "piano"],
+        ["football","baseball","basketball","pingpong","archery","golf","curling"],
+        ["taxi", "bus", "bicycle", "car", "airplane", "subway", "board"],
+      ];
+      for(let i = 0; i < dimArr1.length; i++){
+        for(let j = 0 ;  j < dimArr1[i].length; j++){
+          console.log(dimArr1[i][j]);
+        }
+      }
+
+      let dimArr2 = [ ["math","science","society","ethics","mechanics","physical","korean"],
+        ["turkey", "brazil","France","Argentina","Japan","Korea","Spain"], 
+        ["pencil","eraser","mouse","driver","keyboard", "laptop","dsektop"],
+        ["SF","Romance","action","horror","comedy","animation","sports"]];
+
+      //console.log(  month1[0][0]);     기준으로 부터 행정보, 열정보가 필요함  ( 변수 하나에 접근가능 )
+
+      // 3차원 배열 : 2차원 배열의 집합 : 배열의 요소가 2차원 배열 한 개 의미
+      // 면, 행, 열 로 접근
+
+      let word_year = [
+        [
+          ["apple", "banana", "cat", "dog", "elephant", "flower", "guitar"],
+          ["house", "internet", "jungle", "kangaroo", "lion", "moon", "nest"],
+          ["orange", "piano", "queen", "rabbit", "sun", "tree", "umbrella"],
+          ["vase", "water", "xylophone", "yacht", "zebra", "ant", "ball"],
+        ],
+
+        [[], [], [], []],
+      ];
+
+      
+    </script>
+  </body>
+</html>

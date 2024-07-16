@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성인 판단 프로그램</title>
+    <script>
+        /*1. 나이를 입력받아서  성인인지 판단하는 프로그램 작성하기 
+    - 나이를 입력받는다.   prompt()
+    - 나이를 판단한다  
+    - 알림창에 정보를 출력한다. alert()*/
+
+    while(true){
+    //나이 입력 받기
+    let age = prompt("사용자의 나이를 입력해주세요.");
+
+    //숫자를 입력하지 않았거나 입력한 숫자가 음수일 때.
+        if(age != parseInt(age)  || age < 0){
+        alert("올바른 나이를 입력해주세요.");
+        continue;
+    }
+    //성인 나이가 아닐 때 (0~19세)
+    else if(0 <= age && age <= 19){
+        alert("성인이 아닙니다.");
+        break;
+    }
+    //성인 나이를 만족할 때
+    else{
+        alert("성인입니다.");
+        break;
+    }
+    
+}
+    </script>
+</head>
+<body>
+</body>
+</html>

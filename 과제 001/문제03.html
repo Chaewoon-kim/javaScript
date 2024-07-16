@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>원의 둘레 구해보기</title>
+  </head>
+  <body>
+    <script>
+      /*
+       
+        원주구하기 )   지름을 입력받아 원주(원의 둘레) 구하기 
+        원주율:3.14   
+
+        입력 : 지름
+        출력 : 원주 
+
+        처리과정: 지름을 입력 받고 변수에 원주율(3.14)을 대입.
+        원주라는 변수를 설정해 지름 * 원주율 결과값 대입
+        alert()함수로 원주 출력
+
+*/
+      let diameter = prompt("지름을 입력해주세요: ");
+      let pi = 3.14;
+      let round = diameter * pi;
+      document.write("해당 원의 둘레 값은 " + round);
+    </script>
+  </body>
+</html>

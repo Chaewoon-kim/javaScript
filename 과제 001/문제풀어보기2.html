@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별 출력 프로그램</title>
+</head>
+<body>
+    <h2>입력받은 숫자만큼 별 출력하기</h2>
+</body>
+<script>
+    //수를 입력받아 원하는 만큼 별 출력하기
+    let num = prompt("숫자를 입력해주세요.");
+    for(let i = 0; i < num ; i++){
+        for(let j = 0; j <= i; j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>
+</html>

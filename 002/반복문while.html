@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While문 연습</title>
+</head>
+<body>
+    <h2>1 ~ 10까지의 합</h2>
+    <div id="result">결과는</div>
+
+    <script>
+    //1. 입력 2. 처리 3. 출력
+    // 입력x 출력: 10까지의 합 (sum) , 처리: 항, 반복제어 변수: i
+
+    let sum = 0;
+    let i = 0;
+    while(i <= 10){
+        sum += i;
+        i++;
+    }
+    document.write(sum);
+    
+    document.querySelector("#result").innerHTML = sum;
+    
+    </script>
+</body>
+</html>

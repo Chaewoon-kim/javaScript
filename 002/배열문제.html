@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열을 사용해 점수 출력하기</title>
+</head>
+<body>
+    
+
+    <script>
+        let kors = [90,80,70,99,65,70];
+        // 0. 모두 점수 출력하기
+        let totalScore = 0;
+        for(let i = 0 ; i < kors.length; i++){
+            totalScore += kors[i];
+        }
+        console.log(totalScore);
+
+        
+        // 1. 평균구하기
+        let avgScore = totalScore / kors.length;
+        console.log(avgScore);
+
+        // 2. 평균보다 높은 학생 수 구하기
+        let totalStudents = 0; // 총 학생 수
+        for(let i = 0; i < kors.length; i++){
+            //배열의 각 인덱스 값과 평균 값 비교
+            if(kors[i] > avgScore){
+                totalStudents++;
+            }
+        }
+        console.log(totalStudents);
+        
+    </script>
+
+
+
+</body>
+</html>
