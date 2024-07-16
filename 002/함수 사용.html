@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>함수에 대하여..</title>
+  </head>
+  <body>
+    <script>
+      //중복 코드 -> 유지보수의 어려움
+      //ex) 성적표 타이틀 수정 요구사항 -> *****변경
+
+      //함수 호출을 통해 기능 가져다 사용
+      printTitle(); 
+
+      
+
+
+
+      
+      //코드 중복을 없애기 위한 함수 생성
+      //성적표 타이틀 출력 기능
+      function printTitle() {
+        document.write("************************<br>");
+        document.write("*******성적표***********<br>");
+        document.write("************************<br>");
+      }
+    </script>
+  </body>
+</html>
