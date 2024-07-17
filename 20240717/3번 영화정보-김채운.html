@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화정보 출력하기</title>
+</head>
+<body>
+    
+    <div>
+        <h2>마블영화</h2>
+    <button onclick="showDetails()">정보 보기</button>
+</div>
+    <div id="movieDetails"></div>
+    
+    <script>
+      class Movie1{
+      name =  "아이언맨3";  
+      genre ="SF"; 
+      year = 2013;  
+      grade =8.87; 
+      runningTime ="129분" 
+      image =("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20130308_211%2Fdasolsys01_13626880080239nk7m_JPEG%2F20130301084641215496.jpg&type=sc960_832");
+    }
+    class Movie2{
+        name = "어벤져스:엔드게임";
+        genre = "SF";
+        year = 2019;
+        grade = 9.50;
+        runningTime = "181분"
+    }
+    class Movie3{
+        name = "블랙펜서";
+        genre = "action";
+        year = 2018;
+        grade = 8.33;
+        runningTime = "135분";
+    }
+    
+    let MovieArr = [new Movie1(),new Movie2(),new Movie3()];
+    function showDetails(){
+        let details = document.getElementById("movieDetails");
+        let content = "";
+        for(let Movies of MovieArr){
+            content += "<b>제목:</b> " + Movies.name + ", <b>장르:</b> " + Movies.genre + ", <b>개봉년도:</b> " + Movies.year + 
+            ", <b>평점:</b> " + Movies.grade + ", <b>상영시간:</b>" + Movies.runningTime + "<br><br>";
+        }
+        details.innerHTML = content;
+
+    }
+        
+      
+      
+    </script>
+</body>
+</html>
