@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice 활용</title>
+</head>
+<body>
+    <script>
+        let arr = ["one","two","three","four","five"];
+        
+        //splice(a,b) -> a인덱스에서 시작해 b길이만큼 자른 요소들을 가지고 새로운 배열 생성
+        let deleteItemArr = arr.splice(1,4); 
+        console.log(deleteItemArr);
+
+        let deleteItem = deleteItemArr[0]; //0번째 인덱스 요소를 삭제하고 새로운 크기의 배열 생성
+        console.log(deleteItem);
+        console.log(arr);
+    </script>
+</body>
+</html>
