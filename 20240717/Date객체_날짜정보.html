@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체 활용</title>
+</head>
+<body>
+
+    <h2> Date 객체를 활용하기</h2>
+
+
+    <script>
+
+        //현재날짜구하기
+        let current = new Date();
+        console.log( current);
+
+        //특정날짜구하기
+        let specDate = new Date("1999-09-21");
+        console.log(specDate); 
+
+        let year= specDate.getFullYear();
+        let month = specDate.getMonth()+1; // 0부터 출력하기 때문에 1을 더하여 정확한 달을 출력
+        let date = specDate.getDate();
+        let day = specDate.getDay();  // 역시 0부터 출력, but 여기서는 0:일요일
+        // 0:일요일 , 1:월요일
+        let days  = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+
+        
+        console.log( year); //1999
+        console.log( month); //09
+        console.log( date); //21
+        console.log( day);  //2
+        console.log( days[day]); //화요일 
+
+        let day2 = current.getDay();
+        console.log("오늘은" + days[day2]);        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체에 대해</title>
+  </head>
+  <body>
+    <script>
+      //하나의 도서 정보 표현
+      //도서정보에 필요한 데이터
+      /*
+        도서이름, 
+        도서가격,
+        출판사,
+        저자, ...
+        */
+      let bookName = "뇌";
+      let bookPrice = 15000;
+      let bookPublisher = "열린책들";
+      let bookAuthor = "베르나르베르베르";
+
+      //javascript 객체 표현법 : JSON
+      let bookinfo = {
+        name: "뇌",
+        price: 15000,
+        publisher: "열린책들",
+        author: "베르나르베르베르",
+      };
+      
+      //객체에 접근해 속성 출력
+      console.log(bookinfo.name);
+      console.log(bookinfo.price);
+      console.log(bookinfo.publisher);
+      console.log(bookinfo.author);
+
+      // ex) 객체 속성값 변경하고 싶을 때
+      bookinfo.price = 13000;
+      console.log(bookinfo.price);
+      console.log(bookinfo["author"]);
+
+      bookinfo.publisher = "에이콘";
+      console.log(bookinfo.publisher);
+    </script>
+  </body>
+</html>
