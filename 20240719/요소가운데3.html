@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 가운데 위치시키기2</title>
+    <style>
+        .Item{
+            height: 100px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .Item_Child{
+            /*부모를 기준으로*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*현재 아이템 기준으로 자신의 크기 반만큼 이동*/
+            transform: translate(-50% ,-50% );
+
+        }
+    </style>
+</head>
+<body>
+    <div class="Item"><div class="Item_Child">요소 가운데</div></div>
+</body>
+</html>
