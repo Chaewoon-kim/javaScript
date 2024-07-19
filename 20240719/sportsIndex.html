@@ -155,20 +155,89 @@
         }
         h5{
             margin-left: 20px;
+            font-weight: bold;
+            color: black;
         }
         section .list p{
             margin-top: 22px;
-            margin-left: 4%;
+            margin-left: 5%;
             font-size: 13px;
             color: gray;
-        }
-        section .list h4{
-            margin-left: 300px;
         }
         section .list #canada{
             width: 55px;
             height: 30px;
+            margin-left: 10px;
+        }
+        section .list #uruguay{
+            width: 50px;
+            height: 35px;
+        }
+        .list{
+            align-items: center;
+            display: flex;
+            
+        }
+        .list h5{
+            color: gray;
+        }
+        .list .score , .list .score2{
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            padding-right: 60px;
+        }
+        .list #canada1{
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+        }
+        .list #uruguay1{
+            font-size: 18px;
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .list .list-btn{
+            margin-left: 300px;
+        }
+        .explain{
+            text-align: center;
+            margin-top: 100px;
+        }
+        .indent-text{
+            display: block;
             margin-left: 20px;
+        }
+        .a{
+            color:blue;
+            text-decoration: underline;
+        }
+        footer .f1{
+            border-style: none;
+            width: 500px;
+            
+            background-color:rgba(211, 211, 211, 0.711);
+            text-align: center;
+            padding-top: 50px;
+            font-size: 18px;
+        }
+        .f1 .b{
+            font-weight: bold;
+        }
+        footer .f2{
+            display: flex;
+            border-style: none;
+            margin: 0;
+            background-color: rgba(211, 211, 211, 0.711);
+            font-size: 18px;
+            font-weight:600;
+        }
+        footer .f2 p{
+            margin-left: 30px;
+            margin-top: 40px;
+        
         }
     </style>
   </head>
@@ -209,13 +278,27 @@
         <div class="list">
             <h5>09:00</h5>
             <p>뱅크오브아메리카 스타디움</p>
-            <h4>캐나다</h4>
+            <p id="canada1">캐나다</p>
             <img src="../20240719/images/canada.png" id="canada">
+            <p class="score">2</p>
+            <h5>종료</h5>
+            <p class="score2">3</p>
+            <img src="../20240719/images/uruguay.png" id="uruguay">
+            <p id="uruguay1">우루과이</p>
+            <div class="list-btn">
+            <button >영상</button>
+            <button >기록</button>
+            </div>
+        </div>
+        <div class="explain">
+            팀 메뉴는 지난 시즌 기준으로 정렬되며 네이버 스포츠에서 제공하는 일정, 결과, 기록 등의 데이터는 '제공처'의 사정에 따라 지연되거나 잘못 표시될 수 있습니다.<br>
+            <span class="indent-text">네이버(주)는 그에 따른 스포츠 데이터의 정확성 및 신뢰성을 담보하지 않습니다. 그 밖의 궁금하신 사항은 <span class="a">고객센터</span>를 통해서 문의해주시기 바랍니다.</span>
         </div>
       </section>
       <footer>
-        <div class="f1">a</div>
-        <div class="f2">b</div>
+        <div class="f1"><span class="b">공지사항</span>  네이버스포츠 TV중계 편성 안내드립니다.</div>
+        <div class="f2"><p>PARISNOW</p> <p>홈 </p><p>야구</p> <p>해외야구</p> <p>축구 </p><p>해외축구</p> <p>농구</p> <p>배구 </p>
+            <p>N골프</p> <p>일반</p></div>
       </footer>
     </div>
   </body>

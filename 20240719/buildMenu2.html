@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴 만들기</title>
+    <style>
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu {
+        display: flex;
+      }
+
+      .menu-item {
+        width: 200px;
+        height: 50px;
+        border: 1px solid black;
+        text-align: center;
+        /*line-height 속성을 통해 글자를 박스 안에 꽉 채워줌*/
+        line-height: 50px;
+
+      }
+
+      .sub-menu {
+        display: none;
+      }
+      .menu-item:hover .sub-menu {
+        display: block;
+        background-color: beige;
+        width: 100%;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+      <li class="menu-item">
+        상위메뉴
+        <ul class="sub-menu">
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        상위메뉴
+        <ul class="sub-menu">
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        상위메뉴
+        <ul class="sub-menu">
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        상위메뉴
+        <ul class="sub-menu">
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        상위메뉴
+        <ul class="sub-menu">
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+          <li>하위메뉴</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

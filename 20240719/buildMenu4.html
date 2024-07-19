@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 만들기4</title>
+    <style>
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .menu{
+            display: flex;
+        }
+        .menu-item{
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            line-height: 50px;
+            overflow: hidden; /*범위를 넘어간 것은 보이지 않게 하겠다*/
+        }
+
+        /*높이를 설정하고, transition효과를 넣어 화면이 길게 늘어나는 것처럼 보임*/
+        .menu:hover .menu-item{
+            height: 200px;
+            transition: 0.4s;             
+            /*주어진 시간동안 초기 높이 (50px)에서 설정 높이 (200px)까지 늘어남*/
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="menu-item">상위메뉴1
+            <ul class="sub-menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴3</li>
+            </ul>
+        </li>
+        <li class="menu-item">상위메뉴2</li>
+        <li class="menu-item">상위메뉴3</li>
+    </ul>
+</body>
+</html>
