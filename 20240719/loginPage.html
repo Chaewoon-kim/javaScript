@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 페이지</title>
+    <style>
+      * {
+        margin: 0; 
+        padding: 0;
+        box-sizing: border-box; 
+      }
+      #container {
+        width: 1200px; 
+        height: 00px;
+        margin: 20px auto;
+        text-align: center;
+      }
+      #header {
+        margin-top: 100px;
+        width: 100%; 
+        height: 100px; 
+      }
+      h1 {
+        font-family: "Nunito", serif;
+        font-size: 40px;
+        color: white;
+        text-align: center;
+      }
+      h2 {
+        margin-top: 100px;
+        margin-bottom: 20px;
+        font-family: "Nunito", sans-serif;
+        font-size: 30px;
+        color: black;
+        text-align: center;
+      }
+      #email,
+      #password {
+        width: 300px;
+        height: 50px;
+        box-sizing: border-box;
+        background-color: rgb(212, 212, 212);
+        margin: 5px auto; 
+        padding-left: 10px;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        color: black;
+        text-align: left;
+        border: none; 
+      }
+
+      #p3 {
+        margin: 40px auto;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        color: black;
+        text-align: center;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        cursor: pointer;
+      }
+      #Signup {
+        margin-top: 150px;
+        font-family: "Nunito", sans-serif;
+        font-size: 30px;
+        color: white;
+        text-align: center;
+      }
+      #Log-in {
+        width: 600px; 
+        height: 450px;
+        background-color: white;
+        border-radius: 2%;
+        box-shadow: -2px -2px 3px 7px gray;
+        float: left; 
+      }
+      button {
+        display: block;
+        margin: -20px auto 0;
+        background-color: rgb(76, 76, 158);
+        padding: 10px 20px;
+        border: none;
+        color: white;
+        border-radius: 5px;
+      }
+      #Sign-up {
+        width: 600px; 
+        height: 450px; 
+        border-radius: 2%;
+        background-color: rgba(162, 118, 118, 0.876);
+        box-shadow: 2px -2px 3px 7px black;
+        float: left; 
+      }
+      #p4 {
+        margin: 40px auto;
+        text-align: center;
+        font-family: "Nunito", sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      #button1 {
+        display: block;
+        margin: -20px auto 0;
+        background-color: rgba(21, 15, 15, 0.664);
+        color: white;
+        border-radius: 5px;
+        border: 2px solid black;
+      }
+      #button1:hover{
+        background-color: beige;
+        cursor: pointer;
+        color: rgba(255, 0, 0, 0.648);
+      }
+      #button2 {
+        display: block;
+        margin: -20px auto 0;
+        background-color: rgba(21, 15, 15, 0.664);
+        padding: 10px 20px;
+        color: black;
+        border-radius: 5px;
+        border: 2px solid black;
+        color: white;
+      }
+      #button2:hover{
+        cursor: pointer;
+        background-color: beige;
+        color:rgba(255,0,0,0.648);
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">
+        <h1>Log in/Sign up</h1>
+      </header>
+      <aside id="Log-in">
+        <h2>Log in</h2>
+        <input id="email" type="text" placeholder="Email" />
+        <input id="password" type="password" placeholder="Password" />
+        <p id="p3">
+          비밀번호를 잊어버리셨나요?
+        </p>
+        <button id="button1">로그인</button>
+      </aside>
+      <section id="Sign-up">
+        <h2 id="Signup">Sign up</h2>
+        <p id="p4">
+          환영합니다.<br />개인정보 입력 후 회원가입을 진행해주세요.
+        </p>
+        <button id="button2" onclick="signUp()">회원가입</button>
+      </section>
+    </div>
+  </body>
+  <script>
+    function signUp(){
+        //회원가입 페이지로 넘어감
+    }
+  </script>
+</html>
