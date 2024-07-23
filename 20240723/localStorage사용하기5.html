@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로컬 저장소 사용하기5</title>
+  </head>
+  <body>
+    <ul class="list"></ul>
+    <script>
+      let fruits = ["apple", "banana", "melon"];
+
+      //로컬저장소에 저장
+      function saveFruits() {
+        localStorage.setItem("fruits", JSON.stringify(fruits)); //key : fruits, value :배열을 문자열로 변환한 값.
+      }
+
+      function initFruits() {
+        let saveList = localStorage.getItem("fruits");
+
+        if (saveList != null) {
+          fruits = JSON.parse(saveList);
+        }
+
+        //화면에 나타내기
+        let str = "";
+        for (let i = 0; i < fruits.length; i++) {
+          str += `<li data-id = '${i}'>${fruits[i]}<button onclick = 'deletItem(this)''> X </button> </li>`;
+        }
+        let list = document.querySelector(".list");
+        list.innerHTML = str; //ul 태그 사이에 str(li 태그들을 집어넣어준다)을 넣어줌
+      }
+
+      saveFruits();
+      initFruits();
+
+      //리스트들의 요소를 삭제하는 메서드 (눈에서도 사라져야 되고 , 로컬저장소 내 배열에서도 없어져야 함)
+      function deletItem(obj) {
+        let li = obj.parentElement;
+        let id = li.getAttribute("data-id");
+        alert(id);
+        li.remove();
+        fruits.splice(id,1); //검색어 배열에서 특정 요소 삭제 
+        console.log(fruits);
+        saveFruits(); //새로운 배열 저장   
+      }
+      
+    </script>
+  </body>
+</html>

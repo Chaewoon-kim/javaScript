@@ -72,11 +72,11 @@
         border: none;
         outline: none;
       }
-      ul{
+      ul {
         list-style: none;
         margin-top: 10px;
       }
-      .search_list{
+      .search_list {
         display: none;
       }
     </style>
@@ -105,32 +105,30 @@
         <input type="text" onfocus="showList()" onblur="hideList()" />
         <!--검색목록 영역-->
         <ul class="search_list">
-            <li>야</li>
-            <li>어이</li>
-            <li>오이</li>
+          <li>야</li>
+          <li>어이</li>
+          <li>오이</li>
         </ul>
       </div>
     </div>
 
-
-
     <script>
-        function showList(){
-           //검색 목록 영역 보이게  + 검색바의 크기를 auto -> 내용만큼 크기가 결정
-           let search_list = document.querySelector(".search_list");
-           let search_bar = document.querySelector(".search_bar");
-           search_list.style.display = "block"; //none -> block
-           search_bar.style.height = "auto"; 
+      function showList() {
+        //검색 목록 영역 보이게  + 검색바의 크기를 auto -> 내용만큼 크기가 결정
+        let search_list = document.querySelector(".search_list");
+        let search_bar = document.querySelector(".search_bar");
+        search_list.style.display = "block"; //none -> block
+        search_bar.style.height = "auto";
+      }
+      function hideList() {
+        setTimeout(function () {
+          let search_list = document.querySelector(".search_list");
+          let search_bar = document.querySelector(".search_bar");
 
-        }
-        function hideList(){
-            let search_list = document.querySelector(".search_list");
-            let search_bar = document.querySelector(".search_bar");
-
-            search_list.style.display = "none";
-            search_bar.style.height = "60px";
-            
-        }
+          search_list.style.display = "none";
+          search_bar.style.height = "60px";
+        }, 2000);
+      }
     </script>
   </body>
 </html>

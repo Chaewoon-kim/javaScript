@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 저장소 사용하기3</title>
+</head>
+<body>
+    
+    <ul class="list"> 
+
+    </ul>
+    <script>
+        //로컬저장소에서 읽어드린 값 ul태그 안에 리스트로 나타내기.
+        
+        let search = ['과자', '수박', '선크림'];
+        let searchString = JSON.stringify(search); //배열을 문자열화 하기(JSON.stringify)
+        localStorage.setItem("search" , searchString); //문자열화 된 것을 로컬 저장소에 저장하기 (setItem)
+
+        let readString = localStorage.getItem("search"); //로컬 저장소에 저장된 아이템 가져오기(getItem)
+        let readSearch = JSON.parse(readString); //문자열화 된 것을 다시 배열로 변환(JSON.parse)
+
+        console.log(readSearch);
+
+        let list = document.querySelector(".list");
+
+        let str = "";
+        for(let i = 0 ; i < readSearch.length; i++){
+            let item = readSearch[i]; //배열의 각 요소들을 item이라는 변수에 넣어준다.
+            str +="<li>" + item + "</li>"; // 아이템들을 li 태그에 넣어 반복을 통해 str 완성
+        }
+
+        list.innerHTML = str; //innerHTML -> 해당 요소의 내용을 화면에 나타냄
+    </script>
+</body>
+</html>

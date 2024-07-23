@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload = "showData()">
+    <h1>배열 저장 예제</h1>
+    <input type="text" id="search" onkeyup="saveData(event)">
+    <div>검색어</div>
+    <div class="wrap">
+
+
+    </div>
+    <script>
+      let storageArray = [];
+
+      //데이터 저장 메서드
+      function saveData(e){
+        console.log(e.keyCode);
+        if(e.keyCode == 13){ //13 -> 엔터키
+          var searchItem = document.getElementById('search').value;
+          storageArray.pusth(searchItem);
+          localStorage.setItem('searchItems', JSON.stringify(storageArray));
+          alert("데이터가 저장되었습니다.");
+          showData();
+        }
+      }
+
+      //로컬저장소에 있는 내용 불러오기
+      function loadData(){
+        let existingData = localStorage.getItem('searchItems');
+        if(existingData != null){
+          storageArray = JSON.parse(existingData);
+        }
+        console.log(storageArray);
+      }
+
+      function showData(){
+        loadData();
+
+        let wrap = document.querySelector(".wrap");
+        let str = "<ul>";
+        storageArray.forEach(function(item, i){
+          str += "<li data-item = " + item + ">" + item + "<button onclick'deleteData( this)'>삭제 </button></li>";
+        });
+        str += "<ul>";
+        wrap.innerHTML = str;
+      }
+
+
+      function deleteData(obj){
+        let li = obj.parentElement;
+        let itemToDelete = li.getAtrribute('data-item');
+
+        let index = storageArray.indexOf(itemToDelete);
+        let deleteItem = storageArray.splice(index,1)[0];
+
+        localStorage.setItem('searchItems', JSON.stringify(storageArray));
+        alert("데이터가 삭제 되었습니다.");
+        showData();
+        
+      }
+    </script>
+  </body>
+</html>

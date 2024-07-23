@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 저장소 사용하기4</title>
+</head>
+<body>
+    <input type="text" id="search_word"><button onclick="searchItem()">검색</button><button onclick="loadData()">조회</button>
+
+    <ul class="list">
+
+    </ul>
+    <script>
+        let searchList=[]; //배열 초기화
+
+        //push -> JSON.stringify -> setItem -> getItem -> JSON.parse -> 반복문을 통해 사용자 화면에 보여주기
+
+
+        function searchItem(){
+            let search_word = document.querySelector("#search_word").value; //id = search_word에 해당하는 document의 value값을 search_word에 저장
+            searchList.push(search_word); //value값을 배열에 저장
+            console.log(searchList);
+
+            //로컬저장소에 저장하기.
+            let searchListString = JSON.stringify(searchList); //저장된 배열을 문자열화시킴 (JSON.stringify)
+            localStorage.setItem("search",searchListString); //로컬 저장소에 key,value값 저장(setItem)
+        }
+        function loadData(){
+            let DataString = localStorage.getItem("search"); //로컬 저장소에서 "" 안을 만족하는 데이터 빼내기(getItem)
+            //배열로 변환
+            loadDataList = JSON.parse(DataString); //문자열화 된 것을 다시 배열로 변환(parse)
+
+            //사용자 화면에 보여주기
+            let str = ""; //누적 변수
+            for(let i = 0 ; i < loadDataList.length ; i ++){
+                let item = loadDataList[i]; //배열의 각 인덱스를 새로운 변수에 저장하고
+                str += "<li>" + item + "</li>"; // 변수의 값을 리스트로 나타냄 
+            }
+            let list = document.querySelector(".list"); //변수(list)를 ul에 저장
+            list.innerHTML = str;//innerHTML을 통해 화면에 보여줌
+        }
+    </script>
+</body>
+</html>

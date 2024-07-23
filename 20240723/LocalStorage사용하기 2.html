@@ -11,22 +11,28 @@
 
         // 1. 저장
         // 1-1 .문자열화(JSON.stringify)
-        // 1-2 .로컬 저장소에 저장 (setItem)
+        // 1-2 .로컬 저장소에 저장 setItem(key,value);
         
         // 1-1
         let searchString = JSON.stringify(search);
         console.log(searchString);
         // 1-2
-        localStorage.setItem("search" , searchString);
+        localStorage.setItem("search" , searchString); //key: search , value -> searchString : search 배열을 문자열화 한 값.
+        
 
         //2. 읽기
-        //2-1 .로컬 저장소에서 key로 꺼냄 (getItem)
+        //2-1 .로컬 저장소에서 key로 꺼냄 getItem(key)
         let readString = localStorage.getItem("search");
-        console.log(readString);
+        console.log(readString); 
 
         //2-2. 문자열화 된 것을 다시 배열로 변경 (JSON.parse)
         let readArr = JSON.parse(readString);
-        console.log(readArr); 
+        console.log(readArr); //최종 배열 변경
+
+        //총 정리
+        //배열을 이용해 로컬저장소를 사용
+        // 과정: 배열을 문자열화해야만 저장소에 넣을 수 있음 (JSON.stringify) -> 로컬스토리지에 요소들 넣어줌 : setItem(key,value) [로컬배열소에 저장 성공]
+        // 데이터 읽기: getItem(key) -> 문자열화한 것을 다시 배열로 변환 (JSON.parse)
     </script>
 </body>
 </html>
