@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬저장소 사용하기: 배열</title>
+</head>
+<body>
+    <script>
+        let search = ['과자', '수박', '핸드크림', '풋살공', '앰플'];
+
+        // 1. 저장
+        // 1-1 .문자열화(JSON.stringify)
+        // 1-2 .로컬 저장소에 저장 (setItem)
+        
+        // 1-1
+        let searchString = JSON.stringify(search);
+        console.log(searchString);
+        // 1-2
+        localStorage.setItem("search" , searchString);
+
+        //2. 읽기
+        //2-1 .로컬 저장소에서 key로 꺼냄 (getItem)
+        let readString = localStorage.getItem("search");
+        console.log(readString);
+
+        //2-2. 문자열화 된 것을 다시 배열로 변경 (JSON.parse)
+        let readArr = JSON.parse(readString);
+        console.log(readArr); 
+    </script>
+</body>
+</html>
