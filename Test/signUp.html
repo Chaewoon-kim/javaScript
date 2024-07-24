@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <script>
+        function check(){
+            let frm = document.frm;
+            let userName = frm.userName.value;
+            let userId = frm.userId.value;
+    
+            if(userName == ""){
+                alert("이름을 입력해주세요.");
+                frm.userName.focus();
+                return;
+            }else if(userId == ""){
+                alert("아이디를 입력해주세요.");
+                frm.userId.focus();
+                return;
+            }
+            alert("회원가입이 정상적으로 이뤄졌습니다.");
+        }
+      </script>
+    <style>
+      header {
+        height: 100px;
+        background-color: rgb(245, 248, 248);
+        position: relative;
+      }
+      #title {
+        position: absolute;
+        left: 10px;
+        top: 20px;
+      }
+      #search {
+        width: 200px;
+        height: 50px;
+        position: absolute;
+        right: 10px;
+        bottom: 20px;
+        display: flex;
+      }
+      #search input {
+        border: none;
+      }
+      nav {
+        height: 40px;
+        padding: 20px;
+        background-color: rgb(232, 243, 243);
+        display: flex;
+      }
+      nav p {
+        font-size: 20px;
+        margin-left: 20px;
+      } 
+      table {
+        width: 800px;
+        border: 1px solid rgb(227, 216, 216);
+        margin: 0 auto;
+      }
+      tr {
+        height: 40px;
+      }
+      td {
+        border: 1px solid rgb(227, 216, 216);
+        font-size: 15px;
+        
+      }
+      table input{
+        width: 150px;
+        height: 30px;
+      }
+      table select{
+        width: 150px;
+        height: 30px;
+      }
+      table button{
+        width: 150px;
+        height: 40px;
+        border: 0px;
+      }
+      td:nth-child(1){
+        text-align: center;
+      }
+      tr:nth-child(3), tr:nth-child(7) {
+      height: 70px;
+    }
+    span{
+        color: red;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="title"><img src="../image/logo.png" alt="로고이미지" /></div>
+      <div id="search">
+        <input type="text" id="" /><img src="../image/검색.png" alt="" />
+      </div>
+    </header>
+    <nav>
+      <p>로그인</p>
+      <p>회원가입</p>
+      <p>홈으로</p>
+    </nav>
+    <section>
+      <form name="frm" method="post">
+        <table>
+          <caption>
+            회원가입
+          </caption>
+          <tbody>
+            <tr>
+              <td>이름</td>
+              <td><input type="text" name="userName" /></td>
+            </tr>
+            <tr>
+              <td>아이디</td>
+              <td>
+                <input type="text" name="userId"/>  <button>중복확인</button>
+              </td>
+            </tr>
+            <tr>
+              <td>비밀번호</td>
+              <td>
+                <input type="password" name="userPw1" /><br /><span>※비밀번호는 8자리 이상 영문숫자를 작성해 주세요</span>
+              </td>
+            </tr>
+            <tr>
+              <td>비밀번호 확인</td>
+              <td><input type="password" name="userPw2" /></td>
+            </tr>
+            <tr>
+              <td>이메일</td>
+              <td>
+                <input type="text" name="userMail1" />@<input
+                  type="text"
+                  name="userMail2"
+                />
+                <select onchange="setDomain()" name="op">
+                  <option value="선택하세요">선택하세요</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="gmail.com">gmail.com</option>
+                </select>
+                <button>중복확인</button>
+              </td>
+            </tr>
+            <tr>
+              <td>학년/반</td>
+              <td>
+                <select>
+                  <option value="선택하세요">선택하세요</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option></select
+                >학년
+                <select>
+                  <option value="선택하세요">선택하세요</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option></select
+                >반
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <button type="button" onclick="check()">가입</button>
+                <button>취소</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </section>
+  </body>
+
+</html>
