@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout</title>
+    <script>
+      function show() {
+        console.log("hi");
+      }
+
+      let time;
+      //setTimeout() , clearTimeout()
+      function hide() {
+        if(time != null){
+            clearTimeout(time); //setTimeout을 멈추게 하는 함수
+        }
+        //setTimeout(수행할 코드 , 지연시간); , 수행 할 코드 = 함수 형태로 (콜백함수)
+       time = setTimeout(function () {
+          console.log("bye");
+        }, 2000);
+
+
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" onfocus="show()" onblur="hide()" />
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position_sticky</title>
+    <style>
+        header{
+            height: 300px;
+            background-color: aqua;
+        }
+        nav{
+            height: 60px;
+            background-color: blue;
+
+            /*fixed와 sticky의 차이점
+            -> fixed는 이미 지정된 위치에 붙어버리지만
+            -> sticky는 스크롤을 내리다가 지정된 위치에 도달하면 그때 고정*/
+            position: sticky;
+            top: 0px;
+        }
+        section{
+            height: 5000px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <header>header</header>
+    <nav>nav</nav>
+    <section>내용</section>
+</body>
+</html>
