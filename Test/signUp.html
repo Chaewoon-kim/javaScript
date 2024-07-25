@@ -9,6 +9,9 @@
             let frm = document.frm;
             let userName = frm.userName.value;
             let userId = frm.userId.value;
+            let userPw1 = frm.userPw1.value;
+            let userPw2 = frm.userPw2.value;
+            let userMail1 = frm.userMail1.value;
     
             if(userName == ""){
                 alert("이름을 입력해주세요.");
@@ -18,8 +21,31 @@
                 alert("아이디를 입력해주세요.");
                 frm.userId.focus();
                 return;
+            }else if(userPw1 == ""){
+              alert("비밀번호를 입력해주세요.");
+              frm.userPw1.focus();
+              return;
+            }else if(userPw2 == ""){
+              alert("비밀번호 확인 설정을 마무리해주세요.");
+              frm.userPw2.focus();
+              return;
+            }else if(userMail1 == ""){
+              alert("이메일도 입력하셔야 합니다.");
+              frm.userMail1.focus();
+              return;
             }
-            alert("회원가입이 정상적으로 이뤄졌습니다.");
+            alert("회원가입 성공.");
+        }
+
+        function setDomain(){
+            let frm = document.frm;
+            let op = frm.op;
+
+            let usereMail2= frm.usereMail2;
+            let opValue = op.options[op.selectedIndex].value;
+            alert(opValue);
+
+            usereMail2.value = opValue;
         }
       </script>
     <style>
@@ -80,6 +106,9 @@
         height: 40px;
         border: 0px;
       }
+      table button:hover{
+        cursor: pointer;
+      }
       td:nth-child(1){
         text-align: center;
       }
@@ -98,10 +127,10 @@
         <input type="text" id="" /><img src="../image/검색.png" alt="" />
       </div>
     </header>
-    <nav>
-      <p>로그인</p>
-      <p>회원가입</p>
-      <p>홈으로</p>
+    <nav  >
+      <p><a href="login.html"></a>로그인</p>
+      <p><a href="signUp.html"></a> 회원가입</p>
+      <p><a href="index.html"></a>홈으로</p>
     </nav>
     <section>
       <form name="frm" method="post">
@@ -149,14 +178,14 @@
               <td>학년/반</td>
               <td>
                 <select>
-                  <option value="선택하세요">선택하세요</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option></select
+                  <option value="">선택하세요</option>
+                  <option value="">1</option>
+                  <option value="">2</option></select
                 >학년
                 <select>
-                  <option value="선택하세요">선택하세요</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option></select
+                  <option value="">선택하세요</option>
+                  <option value="">1</option>
+                  <option value="">2</option></select
                 >반
               </td>
             </tr>
