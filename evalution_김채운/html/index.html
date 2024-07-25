@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <style>
+        header{
+            height: 100px;
+            background-color: rgb(245,248,248);
+            position: relative;
+            
+        }
+        .title{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+        .search{
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+        }
+        .search input{
+            border: none;
+            height: 30px;
+            width: 200px;
+            position: absolute;
+            right: 25px;
+        }
+        .search img{
+            width: 30px;
+            height: 30px;
+        }
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232,243,243);
+        }
+        .menu{
+            float: right;
+        }
+        section{
+            height: 600px;
+            margin-top: 50px;   
+        }
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        ul li{
+            width: 300px;
+            padding: 20px;
+            margin: 0 auto;
+            border: 0.5px solid rgb(255,241,241);
+            text-align: center;
+            position: relative;
+        }
+        ul li img{
+            width: 200px;
+            height: 220px;
+        }
+        ul li p{
+            width: 130px;
+            padding: 10px;
+            color: red;
+            background-color: beige;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            position: absolute;
+            top: -15px;
+            right: 0;
+        }
+        footer{
+            padding: 20px;
+            background-color: rgb(233,239,239);
+            display: flex;
+        }
+        .item{
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title"><img src="../images/logo.png" alt="로고이미지"></div>
+        <div class="search"><input type="text"><img src="../images/검색.png" alt=""></div>
+    </header>
+    <nav> 
+        <div class="menu"><a href="login.html">로그인  </a>|<a href="index.html">  홈으로</a></div>
+    </nav>
+    <section>
+        <ul>
+            <li><p>bigdata</p><img src="../images/img01.png" alt=""><br>프로젝트기반 빅데이터 분석과정</li>
+            <li><p>Android</p><img src="../images/img02.png" alt=""><br>자바(JAVA)&안드로이드 개발자 양성과정</li>
+            <li><p>Front</p><img src="../images/img03.png" alt=""><br>Web기반 프론트엔드 자바개발자 양성과정</li>
+        </ul>
+    </section>
+    <footer>
+        <div class="item"><img src="../images/footer_acorn.png" alt=""></div>
+        <div class="item">에이콘ACADEMY(홍대)</div>
+        <div class="item">COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED</div>
+    </footer>
+</body>
+</html>
