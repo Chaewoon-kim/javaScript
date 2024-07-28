@@ -6,25 +6,34 @@
     <title>회원가입 페이지</title>
     <link rel="stylesheet" href="signUp.css">
     <script>
+        // 모달 열기
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
 
-        //화면 초기화
-         function confirmCancel() {
+        // 모달 닫기
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // 화면 초기화
+        function confirmCancel() {
             if (confirm("정말 취소하시겠습니까?")) {
                 document.getElementById("signUpForm").reset();
                 resetValidationMessages();
             }
         }
         
-        //회원가입 완료 
+        // 회원가입 완료 
         function confirmData(){
-            if(confirm("회원하시겠습니까?")){
+            if(confirm("가입하시겠습니까?")){
                 alert("정상적으로 처리되었습니다.");
                 document.getElementById("signUpForm").reset();
                 resetValidationMessages();
             }
         }
         
-        //아이디 사용가능 여부
+        // 아이디 사용가능 여부
         function validateId(){
             const idInput = document.getElementById("userId");
             const idMessage = document.getElementById("idMessage");
@@ -39,7 +48,7 @@
             }
         }
 
-        //비밀번호 일치여부
+        // 비밀번호 일치여부
         function validatePassword(){
             const password = document.getElementById("userPw").value;
             const passwordConfirm = document.getElementById("userPw2").value;
@@ -93,7 +102,7 @@
             </tr>
             <tr>
                <td rawspan="3"> <p id="address">주소<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></p> </td> 
-               <td colspan="3"><p id="letter"><input type="text"><button>우편번호</button></p>
+               <td colspan="3"><p id="letter"><input type="text" id="addNum"><button type="button" onclick="openModal()" id="addAdd">우편번호</button></p>
                <p id="add1"><input type="text">  기본주소<br></p>
                <p id="add2"><input type="text">  나머지주소(선택입력가능)</td></p>
             </tr>
@@ -117,7 +126,7 @@
                 <input type="text" class="phone-number" maxlength="4"></td>
             </tr>
             <tr>
-                <td>SMS 수신여부 <img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
+                <td>SMS 수신여부</td>
                 <td><div class="checkbox-label">
                     <input type="checkbox">동의함
                     </div>
@@ -128,7 +137,7 @@
                 <td><input type="email"></td>
             </tr>
             <tr>
-                <td>이메일 수신여부<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
+                <td>이메일 수신여부</td>
                 <td><div class="checkbox-label">
                     <input type="checkbox">동의함
                     </div>
@@ -143,7 +152,7 @@
         <tr>
             <td>생년월일<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
             <td>
-            <div class="group"><input type="text" id="year"> 년<input type="text" id="age"> 월<input type="text" id="age"> 일
+            <div class="group"><input type="text" id="year"> 년<input type="text" id="age" maxlength="2"> 월<input type="text" id="age" maxlength="2"> 일
             <div class="radio-group"><input type="radio">양력 <input type="radio">음력</div></div>
             </td>
         </tr>
@@ -165,5 +174,24 @@
         <button onclick="confirmData()">회원가입</button>
         <button onclick="confirmCancel()">회원가입 취소</button>
     </div>
+
+    <!-- 모달 -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>우편번호</p>
+            <input type="text" id="postalCode">
+            <button type="button" id="postalCheck" onclick="submitPostalCode()">확인</button>
+        </div>
+    </div>
+
+    <script>
+        // 우편번호 입력 제출
+        function submitPostalCode() {
+            const postalCode = document.getElementById("postalCode").value;
+            document.getElementById("addNum").value = postalCode;
+            closeModal();
+        }
+    </script>
 </body>
 </html>
