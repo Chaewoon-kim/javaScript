@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 페이지</title>
     <link rel="stylesheet" href="signUp.css">
+    <script>
+
+        //화면 초기화
+         function confirmCancel() {
+            if (confirm("정말 취소하시겠습니까?")) {
+                document.getElementById("signUpForm").reset();
+                resetValidationMessages();
+            }
+        }
+        
+        //회원가입 완료 
+        function confirmData(){
+            if(confirm("회원하시겠습니까?")){
+                alert("정상적으로 처리되었습니다.");
+                document.getElementById("signUpForm").reset();
+                resetValidationMessages();
+            }
+        }
+        
+        //아이디 사용가능 여부
+        function validateId(){
+            const idInput = document.getElementById("userId");
+            const idMessage = document.getElementById("idMessage");
+            const idPattern = /^[a-z0-9]{4,16}$/;
+
+            if (idPattern.test(idInput.value)) {
+                idMessage.innerText = "사용 가능한 아이디입니다.";
+                idMessage.style.color = "green";
+            } else {
+                idMessage.innerText = " (영문소문자/숫자,4~16자)";
+                idMessage.style.color = "black";
+            }
+        }
+
+        //비밀번호 일치여부
+        function validatePassword(){
+            const password = document.getElementById("userPw").value;
+            const passwordConfirm = document.getElementById("userPw2").value;
+            const passwordMessage = document.getElementById("passwordMessage");
+
+            if (password === passwordConfirm) {
+                passwordMessage.innerText = "비밀번호가 일치합니다.";
+                passwordMessage.style.color = "green";
+            } else {
+                passwordMessage.innerText = "비밀번호가 일치하지 않습니다.";
+                passwordMessage.style.color = "red";
+            }
+        }
+
+        // 유효성 검사 메시지 초기화
+        function resetValidationMessages() {
+            document.getElementById("idMessage").innerText = "(영문소문자/숫자,4~16자)";
+            document.getElementById("idMessage").style.color = "black";
+            document.getElementById("passwordMessage").innerText = "";
+        }       
+    </script>
 </head>
 <body>
     <div class="signUp"><p>회원 가입</p></div>
@@ -17,19 +73,19 @@
         <div class="b2"><img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘">필수입력사항</div>
     </div>
     <section>
-    <form action="">
+    <form id="signUpForm">
         <table>
             <tr>
                 <td>아이디<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
-                <td><input type="text">  (영문소문자/숫자,4~16자)</td>
+                <td><input type="text" id="userId" oninput="validateId()">  <span id="idMessage">(영문소문자/숫자,4~16자)</span></td>
             </tr>
             <tr>
                 <td>비밀번호<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
-                <td><input type="password">  (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~16자)</td>
+                <td><input type="password" id="userPw" oninput="validatePassword()">  <span>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~16자)</span></td>
             </tr>
             <tr>
                 <td>비밀번호 확인<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
-                <td><input type="password"></td>
+                <td><input type="password" id="userPw2" oninput="validatePassword()"> <span id="passwordMessage"></span></td>
             </tr>
             <tr>
                 <td>이름<img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
@@ -48,7 +104,8 @@
                     <option value="032">032</option>
                     <option value="031">031</option>
                     <option value="054">054</option>
-                    <option value="052">052</option></select><span>-</span><input type="text" class="phone-number"><span>-</span><input type="text" class="phone-number">
+                    <option value="052">052</option></select><span>-</span><input type="text" class="phone-number" maxlength="4"><span>-</span>
+                    <input type="text" class="phone-number" maxlength="4">
             </td>
             </tr>
             <tr>
@@ -56,7 +113,8 @@
                 <td><select name="" id="">
                 <option value="010">010</option>
                 <option value="011">011</option>
-                <option value="019">019</option></select> <span>-</span> <input type="text" class="phone-number"> <span>-</span> <input type="text" class="phone-number"></td>
+                <option value="019">019</option></select> <span>-</span> <input type="text" class="phone-number" maxlength="4"> <span>-</span> 
+                <input type="text" class="phone-number" maxlength="4"></td>
             </tr>
             <tr>
                 <td>SMS 수신여부 <img src="https://img.echosting.cafe24.com/skin/base/common/ico_required.gif" alt="필수아이콘"></td>
@@ -102,6 +160,10 @@
             </select></td>
         </tr>
        </table>
+    </div>
+    <div class="foot">
+        <button onclick="confirmData()">회원가입</button>
+        <button onclick="confirmCancel()">회원가입 취소</button>
     </div>
 </body>
 </html>
