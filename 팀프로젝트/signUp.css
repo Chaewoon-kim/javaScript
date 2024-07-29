@@ -212,8 +212,16 @@ img{
         text-decoration: none;
         cursor: pointer;
     }
+    #postalCode{
+        height: 20px;
+    }
+    #postalCheck{
+        border-radius: 5px;
+        width: 50px;
+    }
     #postalCheck:hover{
         cursor: pointer;
+        color: green;
     }
     #addAdd{
         cursor: pointer;
